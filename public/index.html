@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable Changer</title>
+    <title>Stop all' Ansia insieme</title>
     <style>
         @font-face {
             font-family: 'Neue Regrade';
@@ -244,7 +244,7 @@
                         })
                         previousValue = data.variable;
                     }
-                    document.getElementById('variable-display').innerText = `${TARGET - Number(data.variable)}`;
+                    document.getElementById('variable-display').innerText = data.variable + "/" + TARGET;
                 });
         }
         // Fetch the current variable when the page loads

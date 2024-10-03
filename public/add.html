@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Changer</title>
+    <script>
+        // Function to update the variable
+        function setVariable() {
+            const newValue = document.getElementById('new-value').value;
+            fetch(`/api/add-variable/${newValue}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    getVariable(); // Refresh the displayed variable
+                });
+        }
+    </script>
+</head>
+<body>
+<h1>Change the Variable</h1>
+<p>Current variable value: <span id="variable-display"></span></p>
+
+<label for="new-value">Add Money</label><input type="number" id="new-value" placeholder="0" />
+<button onclick="setVariable()">+</button>
+</body>
+</html>
